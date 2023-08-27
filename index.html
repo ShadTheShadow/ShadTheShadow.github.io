@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question of the Day Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Question of the Day Generator</h1>
+        <button id="generateButton">Generate Question</button>
+        <p id="quote"></p>
+    </div>
+
+    <script>
+        const generateButton = document.getElementById('generateButton');
+        const quoteElement = document.getElementById('quote');
+
+        const quotes = [
+            "What is the meaning of life?",
+            "Where do you see yourself in five years?",
+            "If you could have any superpower, what would it be?",
+            "What's your favorite book and why?",
+            "What's the most important lesson you've learned in life?"
+            // Add more quotes to the array
+        ];
+
+        generateButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            quoteElement.textContent = randomQuote;
+        });
+    </script>
+</body>
+</html>
