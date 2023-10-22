@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,16 +14,31 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Puzzle for Allie Part 2</h1>
     <div>
-        <p>It's not quite ready yet, guess you'll have to wait</p>
+        <p>It's once again time to load the trailer for a band competition. Allie's job is to push her Marimba accross the turf, over the road, and up into the band trailer.</p>
+        <p>But oh no! The trailer starts leaving without her! Since Allie is so smart, she correctly estimates that she has about 40.0m of turf and 30.0m of road to travel in order to catch up at her max velocity.</p>
+        <p>The trailer is accelerating at 0.700 m/s^2 and she must accelerate her Marimba up the ramp at 1.40 m/s^2 relative to the truck in order to be fast enough to avoid getting yelled at by Garcia who is on the trailer 2.10m above the ground.</p>
+        <p>Calculate the number of pizzas Allie should eat afterwards at lunch in order to make up for the loss in calories. Each pizza slice is about 285 calories. Also her Marimba weighs 136 kg and the angle of the ramp is 28 degrees to the horizontal.</p>
+        <p>The coefficient of rolling friction for the wheels on the turf is 0.09 and 0.05 for both the concrete road and the trailer ramp. Assume Allie maintains a constant velocity. Please leave answer in three sig figs.</p>
+        <p>Good luck!</p>
         <input type="number" id="user-input">
         <button id="submit-button">Submit</button>
     </div>
     <div id="hidden-text">
-        <p>Congratulations! You've revealed the hidden text.</p>
+        <p>Congratulations! You have successfully solved the puzzle. Now, for your reward...<br>
+            <img src="/Images/Code.png" class="diagram" width = "500" length = "500">
+            
+        </p>
     </div>
+
+
+    <img src="/Images/Diagram.png" class="diagram" width = "1000" length = "1000">
+
+
+
 
     <script>
         const userInput = document.getElementById("user-input");
@@ -32,9 +49,9 @@
             const inputValue = userInput.value;
 
             // Change this number to the correct number to reveal the text
-            const correctNumber = 42;
+            const correctNumber = 9.34;
 
-            if (parseInt(inputValue) === correctNumber) {
+            if (Math.abs(inputValue - correctNumber) <= 0.1) {
                 hiddenText.style.display = "block";
             }
         });
