@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Protected Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #login-form {
+        margin-top: 50px;
+    }
+    #message {
+        display: none;
+        margin-top: 20px;
+        color: green;
+        font-weight: bold;
+    }
+    #hidden-image {
+        display: none;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="login-form">
+    <h2>What strange thing do you have to do to mate in four?</h2>
+    <form id="password-form">
+        <label for="password">Enter Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="message"></div>
+</div>
+
+<div id="hidden-image">
+    <img src="https://via.placeholder.com/150" alt="Hidden Image">
+</div>
+
+<script>
+document.getElementById("password-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    var password = document.getElementById("password").value;
+
+    // Check if the password is correct
+    if (password == "promote to knight" || password == "Promote to knight" || password == "promote to a knight" || password == "Promote to a knight") {
+        document.getElementById("message").textContent = "SUPRISE!!! I'm making an online Villainous game to play together!";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("hidden-image").style.display = "block";
+    } else {
+        document.getElementById("message").textContent = "Incorrect password. Please try again.";
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").style.display = "block";
+    }
+});
+</script>
+</body>
+</html>
